@@ -76,7 +76,7 @@ map_checkbuttons <- function(choices, values, selected) {
     function(choice, value, select) {
       tags$label(
         class = str_collate(
-          "btn",
+          "btn btn-primary",
           if (select) "active"
         ),
         tags$input(
