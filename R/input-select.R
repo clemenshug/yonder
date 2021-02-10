@@ -55,6 +55,8 @@ selectInput <- function(id, choices = NULL, values = choices,
                         selected = values[[1]], ..., placeholder = NULL) {
   assert_id()
   assert_choices()
+
+  selected <- shiny::restoreInput(id = id, default = selected)
   assert_selected(len = 1)
 
   dep_attach({

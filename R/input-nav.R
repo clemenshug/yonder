@@ -33,8 +33,10 @@ navInput <- function(..., id, choices = NULL, values = choices,
                      selected = values[[1]], appearance = "links",
                      fill = FALSE) {
   assert_id()
-  assert_selected(len = 1)
   assert_possible(appearance, c("links", "pills", "tabs"))
+
+  selected <- shiny::restoreInput(id = id, default = selected)
+  assert_selected(len = 1)
 
   with_deps({
     items <- map_navitems(choices, values, selected)

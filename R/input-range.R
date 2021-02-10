@@ -31,6 +31,8 @@
 rangeInput <- function(id, min = 0, max = 100, default = min, step = 1, ...) {
   assert_id()
 
+  default <- shiny::restoreInput(id = id, default = default)
+
   if (!is.numeric(min)) {
     stop(
       "invalid argument in `rangeInput()`, `min` must be a number",

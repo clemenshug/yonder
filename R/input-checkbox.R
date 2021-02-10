@@ -48,6 +48,8 @@ checkboxInput <- function(..., id, choices = NULL, values = choices,
   assert_id()
   assert_choices()
 
+  selected <- shiny::restoreInput(id = id, default = selected)
+
   with_deps({
     checkboxes <- map_checkboxes(choices, values, selected, inline)
 

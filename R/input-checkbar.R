@@ -23,6 +23,8 @@ checkbarInput <- function(..., id, choices = NULL, values = choices,
   assert_id()
   assert_choices()
 
+  selected <- shiny::restoreInput(id = id, default = selected)
+
   tag <- dep_attach({
     checkboxes <- map_checkbuttons(choices, values, selected)
 

@@ -33,6 +33,8 @@ menuInput <- function(id, label, choices = NULL, values = choices,
   assert_possible(direction, c("up", "right", "down", "left"))
   assert_possible(align, c("right", "left"))
 
+  selected <- shiny::restoreInput(id = id, default = selected)
+
   tag <- dep_attach({
     items <- map_menuitems(choices, values, selected)
 

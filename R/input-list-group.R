@@ -36,6 +36,8 @@ listGroupInput <- function(..., id, choices = NULL, values = choices,
   assert_possible(layout, c("vertical", "horizontal"))
   assert_possible(flush, c(TRUE, FALSE))
 
+  selected <- shiny::restoreInput(id = id, default = selected)
+
   with_deps({
     layout <- resp_construct(layout, c("vertical", "horizontal"))
     classes <- resp_classes(layout, "list-group")

@@ -49,6 +49,8 @@ chipInput <- function(id, choices = NULL, values = choices, selected = NULL,
   assert_choices()
   assert_possible(sort, c("stack", "queue", "fixed"))
 
+  selected <- shiny::restoreInput(id = id, default = selected)
+
   dep_attach({
     toggle <- tags$input(
       class = "form-control custom-select",

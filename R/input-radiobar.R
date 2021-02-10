@@ -23,6 +23,8 @@ radiobarInput <- function(..., id, choices, values = choices,
                           selected = values[[1]]) {
   assert_id()
   assert_choices()
+
+  selected <- shiny::restoreInput(id = id, default = selected)
   assert_selected(len = 1)
 
   dep_attach({

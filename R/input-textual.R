@@ -72,6 +72,8 @@ textInput <- function(..., id, value = NULL, placeholder = NULL,
   assert_id()
   assert_possible(type, possible_types)
 
+  value <- shiny::restoreInput(id = id, default = value)
+
   dep_attach({
     tags$div(
       class = "yonder-textual",
