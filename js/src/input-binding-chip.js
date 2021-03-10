@@ -53,7 +53,7 @@ $.extend(chipInputBinding, {
     let selected = el.querySelectorAll(".active");
 
     if (selected.length === 0) {
-      return null;
+      return false;
     }
 
     return Array.prototype.map.call(selected, s => s.value);

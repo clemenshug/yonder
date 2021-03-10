@@ -14,7 +14,7 @@ $.extend(radiobarInputBinding, {
     let radios = el.querySelectorAll("input:checked:not(:disabled)");
 
     if (radios.length === 0) {
-      return null;
+      return false;
     }
 
     return Array.prototype.slice.call(radios).map(r => r.value);

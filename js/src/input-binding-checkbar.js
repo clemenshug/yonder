@@ -6,7 +6,7 @@ $.extend(checkbarInputBinding, {
     let checked = el.querySelectorAll("input:checked:not(:disabled)");
 
     if (checked.length === 0) {
-      return null;
+      return false;
     }
 
     return Array.prototype.map.call(checked, c => c.value);

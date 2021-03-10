@@ -148,7 +148,7 @@
       var checked = el.querySelectorAll("input:checked:not(:disabled)");
 
       if (checked.length === 0) {
-        return null;
+        return false;
       }
 
       return Array.prototype.map.call(checked, function (c) {
@@ -243,7 +243,7 @@
       var checked = el.querySelectorAll("input:checked:not(:disabled)");
 
       if (checked.length === 0) {
-        return null;
+        return false;
       }
 
       return Array.prototype.map.call(checked, function (c) {
@@ -399,7 +399,7 @@
       var selected = el.querySelectorAll(".active");
 
       if (selected.length === 0) {
-        return null;
+        return false;
       }
 
       return Array.prototype.map.call(selected, function (s) {
@@ -1181,10 +1181,10 @@
       var radios = el.querySelectorAll(".custom-radio > input:checked:not(:disabled)");
 
       if (radios.length === 0) {
-        return null;
+        return false;
       }
 
-      return Array.prototype.slice.call(radios).map(function (r) {
+      return Array.prototype.map.call(radios, function (r) {
         return r.value;
       });
     },
@@ -1299,7 +1299,7 @@
       var radios = el.querySelectorAll("input:checked:not(:disabled)");
 
       if (radios.length === 0) {
-        return null;
+        return false;
       }
 
       return Array.prototype.slice.call(radios).map(function (r) {

@@ -8,10 +8,10 @@ $.extend(radioInputBinding, {
     let radios = el.querySelectorAll(".custom-radio > input:checked:not(:disabled)");
 
     if (radios.length === 0) {
-      return null;
+      return false;
     }
 
-    return Array.prototype.slice.call(radios).map(r => r.value);
+    return Array.prototype.map.call(radios, r => r.value);
   },
   subscribe: (el, callback) => {
     let $el = $(el);
