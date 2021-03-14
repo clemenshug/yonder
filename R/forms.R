@@ -40,7 +40,7 @@ formGroup <- function(label, input, ..., help = NULL, width = NULL) {
   col_classes <- if (!is.null(width)) column(width = width)$attribs$class
 
   dep_attach({
-    if (is_tag(label) && tag_name_is(label, "label")) {
+    if (is.null(label) || (is_tag(label) && tag_name_is(label, "label"))) {
       # do nothing
     } else {
       label <- tags$label(coerce_content(label))
